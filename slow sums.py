@@ -7,6 +7,7 @@
 
 
 import math
+import array
 
 
 # Add any extra import statements you may need here
@@ -16,9 +17,20 @@ import math
 
 
 def getTotalTime(arr):
-
-
-# Write your code here
+    if len(arr) < 2:
+        return 0;
+    temp1 = 0
+    temp2 = 0
+    sum_penalty = 0
+    sorted_arr = sorted(arr)
+    print(sorted_arr)
+    while len(sorted_arr) > 1:
+        temp1 = sorted_arr.pop()
+        temp2 = sorted_arr.pop()
+        penalty = temp1+temp2
+        sum_penalty += penalty
+        sorted_arr.append(penalty)
+    return sum_penalty
 
 
 # These are the tests we use to determine if the solution is correct.
